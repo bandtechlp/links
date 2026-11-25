@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Giancarlos Bandeira | BandTech</title>
 <style>
-:root{--bg:#eef3fb;--card:#ffffff;--text:#0b1730;--muted:#4b5b78;--line:#c9d6ee;--accent:#0a7fd1;--accent2:#6d3fd6;--glow:rgba(10,127,209,.25);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#060d1f;--card:#0d1a36;--text:#e8f1ff;--muted:#8da2c8;--line:#1c3260;--accent:#22d3ee;--accent2:#8b5cf6;--glow:rgba(34,211,238,.3);color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#060d1f;--card:#0d1a36;--text:#e8f1ff;--muted:#8da2c8;--line:#1c3260;--accent:#22d3ee;--accent2:#8b5cf6;--glow:rgba(34,211,238,.3);color-scheme:dark}
+:root{--bg:#e8e6d4;--card:#f4f2e4;--text:#1c2212;--muted:#55593f;--line:#b9b58f;--accent:#6b5a14;--accent2:#4b5d2a;--glow:rgba(75,93,42,.28);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c100a;--card:#171d11;--text:#ebe8d4;--muted:#a3a58a;--line:#3a4426;--accent:#c9b87a;--accent2:#6b7d3a;--glow:rgba(201,184,122,.22);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c100a;--card:#171d11;--text:#ebe8d4;--muted:#a3a58a;--line:#3a4426;--accent:#c9b87a;--accent2:#6b7d3a;--glow:rgba(201,184,122,.22);color-scheme:dark}
 *{box-sizing:border-box;margin:0}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;display:flex;justify-content:center;padding:32px 16px 48px;background-image:radial-gradient(circle at 50% -10%,var(--glow),transparent 55%)}
@@ -16,9 +16,10 @@ main{width:100%;max-width:520px;text-align:center}
 h1{font-size:1.45rem;letter-spacing:.2px}
 .tag{color:var(--accent);font-weight:600;font-size:.9rem;margin-top:4px}
 .bio{color:var(--muted);font-size:.92rem;line-height:1.5;margin:10px auto 0;max-width:420px}
-.social{display:flex;justify-content:center;gap:10px;margin:18px 0 22px;flex-wrap:wrap}
-.social a{padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--text);text-decoration:none;font-size:.82rem;font-weight:600}
-.social a:hover{border-color:var(--accent)}
+.social{display:flex;justify-content:center;gap:10px;margin:18px 0 4px;flex-wrap:wrap}
+.social a{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);background:var(--card);color:var(--accent);transition:transform .15s,border-color .15s}
+.social a:hover{border-color:var(--accent);transform:translateY(-2px)}
+.social a svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 h2{font-size:.72rem;text-transform:uppercase;letter-spacing:1.6px;color:var(--muted);margin:22px 0 10px;text-align:left}
 .links{display:grid;gap:10px}
 .btn{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:14px;color:var(--text);text-decoration:none;text-align:left;transition:transform .15s,border-color .15s,box-shadow .15s}
@@ -26,27 +27,34 @@ h2{font-size:.72rem;text-transform:uppercase;letter-spacing:1.6px;color:var(--mu
 .btn .ic{font-size:1.4rem;width:34px;text-align:center}
 .btn b{display:block;font-size:.95rem}
 .btn small{color:var(--muted);font-size:.78rem}
-.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));border:0;color:#fff}
+.btn.primary{background:linear-gradient(135deg,#55692e,#2f3d1a);border:0;color:#fff}
 .btn.primary small{color:rgba(255,255,255,.85)}
 .badge{display:inline-flex;align-items:center;gap:12px;margin:16px auto 0;padding:11px 18px;border-radius:14px;text-decoration:none;color:var(--text);text-align:left;border:1.5px solid transparent;background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(135deg,var(--accent),var(--accent2)) border-box;box-shadow:0 0 22px var(--glow);transition:transform .15s}
 .badge:hover{transform:translateY(-2px)}
 .badge span:first-child{font-size:1.7rem}
 .badge small{display:block;font-size:.62rem;letter-spacing:1.6px;color:var(--accent);font-weight:700}
 .badge b{font-size:.98rem}
-.hero{display:flex;align-items:center;gap:14px;margin:20px 0 0;padding:16px 18px;border-radius:16px;text-decoration:none;text-align:left;color:#f4ecd0;background:linear-gradient(135deg,#0b1226,#16213f);border:1.5px solid #d4af37;box-shadow:0 0 0 1px rgba(212,175,55,.25),0 8px 28px rgba(212,175,55,.22);transition:transform .15s}
+.hero{display:block;position:relative;margin:20px 0 0;padding:26px 16px 22px;border-radius:12px;text-align:center;text-decoration:none;color:#ebe8d4;background:radial-gradient(circle at 15% 25%,rgba(107,125,58,.55) 0 14%,transparent 15%),radial-gradient(circle at 85% 70%,rgba(70,82,38,.6) 0 16%,transparent 17%),radial-gradient(circle at 55% 10%,rgba(40,48,24,.7) 0 12%,transparent 13%),#1e2616;border:2px solid #c9b87a;box-shadow:inset 0 0 0 4px #1e2616,inset 0 0 0 5px rgba(201,184,122,.5),0 8px 26px rgba(0,0,0,.35);transition:transform .15s}
 .hero:hover{transform:translateY(-2px)}
-.hero .seal{font-size:2rem;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:rgba(212,175,55,.15);border:1px solid #d4af37;flex:none}
-.hero .ht{flex:1}
-.hero small{display:block;font-size:.7rem;letter-spacing:2.4px;font-weight:800;color:#d4af37}
-.hero b{display:block;font-size:1.2rem;letter-spacing:1.6px;line-height:1.25;color:#fff;margin-top:2px}
-.hero em{font-style:normal;font-size:.85rem;color:#c9d3ea}
-.hero .arr{color:#d4af37;font-size:1.5rem}
+.hero::before,.hero::after{content:"";position:absolute;left:18px;right:18px;height:5px;background:repeating-linear-gradient(90deg,#c9b87a 0 16px,transparent 16px 22px)}
+.hero::before{top:10px}.hero::after{bottom:10px}
+.hero .stars{color:#d4af37;letter-spacing:8px;font-size:.95rem;margin:2px 0 8px;text-indent:8px}
+.hero small{display:block;font-size:.72rem;letter-spacing:3px;font-weight:800;color:#d4af37}
+.hero em{display:block;font-style:normal;font-size:.82rem;letter-spacing:3px;color:#d8d4b8;margin-top:8px}
+.hero b{display:block;font-size:clamp(2rem,11vw,2.7rem);letter-spacing:5px;line-height:1.1;color:#fff;margin-top:2px;text-indent:5px;text-shadow:0 2px 0 #000}
 .store{margin-top:10px;padding:18px;background:var(--card);border:1px solid var(--line);border-radius:16px;text-align:left;border-left:3px solid #d4af37}
 .store h3{font-size:1.05rem;letter-spacing:.4px}
 .store .lead{color:var(--accent);font-weight:600;font-size:.88rem;margin:4px 0 12px}
 .store p{font-size:.88rem;line-height:1.55;margin:6px 0}
 .store .sig{color:var(--muted);font-style:italic;margin-top:12px}
 .store a.map{display:inline-block;margin-top:12px;color:var(--accent);font-weight:600;font-size:.85rem;text-decoration:none}
+.store h3 span{display:block;font-size:.75rem;letter-spacing:2.5px;color:var(--accent);font-weight:600;margin-top:2px;text-transform:uppercase}
+.store .row{display:flex;gap:12px;align-items:flex-start;margin:12px 0}
+.store .ico{flex:none;width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:rgba(212,175,55,.14);border:1px solid #d4af37;font-size:1.15rem}
+.store .row p{margin:0;font-size:.82rem;line-height:1.45;color:var(--muted)}
+.store .row b{display:block;font-size:.92rem;color:var(--text);margin-bottom:1px}
+.store .cta{display:block;text-align:center;margin-top:14px;padding:13px;border-radius:10px;background:linear-gradient(135deg,#55692e,#2f3d1a);color:#fff;font-weight:700;font-size:.9rem;text-decoration:none;border:1px solid #c9b87a}
+.store .map{display:block;text-align:center}
 footer{margin-top:30px;color:var(--muted);font-size:.75rem;line-height:1.6}
 </style>
 </head>
@@ -56,9 +64,8 @@ footer{margin-top:30px;color:var(--muted);font-size:.75rem;line-height:1.6}
   <h1>Giancarlos Bandeira</h1>
   <p class="tag">BandTech · Soluções Digitais</p>
   <p class="bio">TI, design gráfico, edição de vídeo e marketing digital. Atendimento em Lago da Pedra – MA.</p>
-  <a class="hero" href="#defensio"><span class="seal">🎖️</span><span class="ht"><small>VENDEDOR OFICIAL</small><b>DEFENSIO – PRÁTICA ESPORTIVA</b></span><span class="arr">→</span></a>
-
   <nav class="social" id="social"></nav>
+  <a class="hero" href="#defensio"><div class="stars">★ ★ ★ ★ ★</div><small>VENDEDOR CREDENCIADO</small><b>DEFENSIO</b><em>PRÁTICAS ESPORTIVAS</em><div class="stars" style="margin:10px 0 0">★ ★ ★</div></a>
 
   <h2>Fale comigo</h2>
   <div class="links" id="main"></div>
@@ -66,14 +73,16 @@ footer{margin-top:30px;color:var(--muted);font-size:.75rem;line-height:1.6}
   <h2>Serviços</h2>
   <div class="links" id="services"></div>
 
-  <h2 id="defensio">Defensio · Prática Esportiva</h2>
+  <h2 id="defensio">Defensio · Práticas Esportivas</h2>
   <section class="store">
-    <h3>Defensio</h3>
+    <h3>DEFENSIO <span>Práticas Esportivas</span></h3>
     <p class="lead">Equipamos você com conforto e qualidade.</p>
-    <p>🎖 Assessoramos na documentação da sua arma.</p>
-    <p>🎖 Concessão de CR e serviços de despachante.</p>
-    <p class="sig">Organize tudo com quem entende e use o seu poder com segurança e sofisticação.</p>
-    <p>📍 Rua São João, nº 496, Rodoviária<br>Lago da Pedra – MA · CEP 65715-000</p>
+    <div class="row"><span class="ico">🛡️</span><p><b>Equipamentos de alto padrão</b>Conforto, qualidade e a confiança que o seu equipamento exige.</p></div>
+    <div class="row"><span class="ico">📋</span><p><b>Assessoria na documentação da sua arma</b>Acompanhamos cada etapa, com organização e segurança.</p></div>
+    <div class="row"><span class="ico">🎖️</span><p><b>Concessão de CR e despachante</b>Certificado de Registro e serviços de despachante, sem burocracia.</p></div>
+    <p class="sig">Organize tudo com quem entende e exerça o seu direito com segurança e sofisticação.</p>
+    <div class="row"><span class="ico">📍</span><p><b>Rua São João, nº 496 · Rodoviária</b>Lago da Pedra – MA · CEP 65715-000</p></div>
+    <a class="cta" href="https://wa.me/5599991351548?text=Ol%C3%A1%2C%20vim%20pelo%20seu%20perfil%20e%20quero%20falar%20sobre%20a%20Defensio." target="_blank" rel="noopener">💬 Falar com o vendedor credenciado</a>
     <a class="map" href="https://maps.google.com/?q=Rua+S%C3%A3o+Jo%C3%A3o+496+Rodovi%C3%A1ria+Lago+da+Pedra+MA+65715000" target="_blank" rel="noopener">Ver no Google Maps →</a>
   </section>
 
@@ -85,9 +94,9 @@ footer{margin-top:30px;color:var(--muted);font-size:.75rem;line-height:1.6}
 var CFG = {
   whatsapp: "https://wa.me/5599991351548?text=Ol%C3%A1%2C%20vim%20pelo%20seu%20perfil!",
   social: [
-    ["Instagram","https://instagram.com/bandtechlp"],
-    ["TikTok","https://www.tiktok.com/@gianbandeira"],
-    ["Site","https://bandtechlp.github.io/gianbandeira"]
+    ["Instagram","https://instagram.com/bandtechlp","ig"],
+    ["TikTok","https://www.tiktok.com/@gianbandeira","tt"],
+    ["Site","https://bandtechlp.github.io/gianbandeira","web"]
   ],
   main: [
     ["💬","Chamar no WhatsApp","Orçamentos e atendimento rápido",null,true],
@@ -112,9 +121,16 @@ function btn(i, primary){
   a.querySelector("small").textContent = i.sub;
   return a;
 }
+var ICONS={
+ig:'<svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>',
+tt:'<svg viewBox="0 0 24 24"><path d="M14 3v11.2a3.8 3.8 0 1 1-3.8-3.8"/><path d="M14 3c.3 2.6 2.1 4.4 5 4.6"/></svg>',
+wa:'<svg viewBox="0 0 24 24"><path d="M4 20l1.3-4.2A8.5 8.5 0 1 1 8.4 18.8L4 20z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1.2-1.6-2-1-1 .8c-1-.4-1.9-1.3-2.3-2.3l.8-1-1-2L9 8.5z" fill="currentColor" stroke="none"/></svg>',
+web:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>'};
+CFG.social.splice(2,0,["WhatsApp",CFG.whatsapp,"wa"]);
 var s = document.getElementById("social");
 CFG.social.forEach(function(x){
-  var a = document.createElement("a"); a.href = x[1]; a.target = "_blank"; a.rel = "noopener"; a.textContent = x[0]; s.appendChild(a);
+  var a = document.createElement("a"); a.href = x[1]; a.target = "_blank"; a.rel = "noopener";
+  a.setAttribute("aria-label",x[0]); a.title = x[0]; a.innerHTML = ICONS[x[2]]; s.appendChild(a);
 });
 var m = document.getElementById("main");
 CFG.main.forEach(function(x){
